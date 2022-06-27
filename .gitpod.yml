@@ -15,6 +15,7 @@ tasks:
       echo "Prebuild is almost ready -- please be patient..."
     command: |
       printf 'export PATH="%s:$PATH"\n' "/workspace/miniconda3/bin" >> $HOME/.bashrc
+      conda init bash
       source $HOME/.bashrc
       conda activate torch_env
 vscode:
