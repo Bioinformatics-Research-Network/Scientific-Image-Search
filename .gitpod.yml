@@ -10,7 +10,7 @@ tasks:
       source $HOME/.bashrc
       conda config --add channels r --add channels anaconda --add channels bioconda --add channels conda-forge --add channels pytorch 
       # conda create -n torch_env pytorch torchvision torchaudio cudatoolkit=11.3
-      conda env create -n torch_env -f torch_env.yml
+      conda env create -n torch_env -f analysis/torch_env.yml
       conda activate torch_env
       echo "Prebuild is almost ready -- please be patient..."
     command: |
