@@ -1,6 +1,6 @@
 # Scientific Image Search
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](https://opensource.org/licenses/MIT)
+[![License: X](https://img.shields.io/badge/License-MIT-black.svg)](https://opensource.org/licenses/MIT)
 [![Contributions: Welcome](https://img.shields.io/badge/Contributions-Welcome-forestgreen.svg)](#Contributing)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Bioinformatics-Research-Network/Scientific-Image-Search)
