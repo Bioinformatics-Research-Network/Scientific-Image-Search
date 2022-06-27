@@ -4,12 +4,13 @@ tasks:
     init: |
       wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
       bash Miniconda3-py39_4.12.0-Linux-x86_64.sh -b -p /workspace/miniconda3
+      rm Miniconda3-py39_4.12.0-Linux-x86_64.sh
       export PATH="/workspace/miniconda3/bin/:$PATH"
       conda init bash
       source $HOME/.bashrc
       conda config --add channels r --add channels anaconda --add channels bioconda --add channels conda-forge --add channels pytorch 
       # conda create -n torch_env pytorch torchvision torchaudio cudatoolkit=11.3
-      conda create -n torch_env -f torch_env.yml
+      conda env create -n torch_env -f torch_env.yml
       conda activate torch_env
       echo "Prebuild is almost ready -- please be patient..."
     command: |
