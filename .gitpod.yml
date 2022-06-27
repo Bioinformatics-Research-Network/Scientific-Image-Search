@@ -1,0 +1,39 @@
+image: gitpod/workspace-python-3.9
+tasks:
+  - name: Create conda env
+    init: |
+      wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+      bash Miniconda3-py39_4.12.0-Linux-x86_64.sh -b -p /workspace/miniconda3
+      export PATH="/workspace/miniconda3/bin/:$PATH"
+      conda init bash
+      source $HOME/.bashrc
+      conda config --add channels r --add channels anaconda --add channels bioconda --add channels conda-forge --add channels pytorch 
+      # conda create -n torch_env pytorch torchvision torchaudio cudatoolkit=11.3
+      conda create -n torch_env -f torch_env.yml
+      conda activate torch_env
+      echo "Prebuild is almost ready -- please be patient..."
+    command: |
+      printf 'export PATH="%s:$PATH"\n' "/workspace/miniconda3/bin" >> $HOME/.bashrc
+      source $HOME/.bashrc
+      conda activate torch_env
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-azuretools.vscode-docker
+    - GitHub.copilot
+github:
+  prebuilds:
+    # enable for the master/default branch (defaults to true)
+    master: true
+    # enable for all branches in this repo (defaults to false)
+    branches: true
+    # enable for pull requests coming from this repo (defaults to true)
+    pullRequests: true
+    # enable for pull requests coming from forks (defaults to false)
+    pullRequestsFromForks: true
+    # add a "Review in Gitpod" button as a comment to pull requests (defaults to true)
+    addComment: true
+    # add a "Review in Gitpod" button to pull requests (defaults to false)
+    addBadge: false
+    # add a label once the prebuild is ready to pull requests (defaults to false)
+    addLabel: prebuilt-in-gitpod

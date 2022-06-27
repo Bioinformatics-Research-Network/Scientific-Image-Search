@@ -1,0 +1,6 @@
+Miniconda3*.sh
+*.pem*
+*.ppk*
+id_rsa
+*.ssh*
+*.env*
